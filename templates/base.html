@@ -1,0 +1,42 @@
+{% from 'bootstrap5/nav.html' import render_nav_item %}
+{% from 'bootstrap5/utils.html' import render_messages %}
+
+<!doctype html>
+<html>
+    <head>
+      <title>Mi Sitio | {{titulo}}</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css') }}">
+      <script src="https://kit.fontawesome.com/c35776eb5a.js" crossorigin="anonymous"></script>
+      {{ bootstrap.load_css() }}
+    </head>
+    <body>
+        <nav class="p-2 bg-dark navbar-wp">
+            <div class="container">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static',filename='img/bootstrap-logo.svg') }}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                </a>              
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    {{ render_nav_item('index', 'Inicio', use_li=True) }}
+                    {{ render_nav_item('sobrenosotros', 'Sobre Nosotros', use_li=True) }}
+                    {{ render_nav_item('contacto', 'Contacto', use_li=True) }}
+                    <li class="nav-item"><a class="nav-link" href="https://bootstrap-flask.readthedocs.io/" target="_blank">Documentación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank">Bootstrap</a></li>
+                </ul>
+                </ul>
+                <div class="text-end">
+                    <a class="btn btn-light px-3" href="https://github.com/matiaslawwliet/curso-flask" role="button" target="_blank"><i class="fa-brands fa-github"></i ></a>
+                </div>
+              </div>
+            </div>
+        </nav>
+    
+        
+      <main class="container">
+        {{ render_messages(container=False, dismissible=True) }}
+        {% block content %}{% endblock %}
+      </main>
+        
+      {{ bootstrap.load_js() }}
+    </body>
+</html>
