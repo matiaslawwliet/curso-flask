@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        {{ formulario_de_login.hidden_tag() }}
+        <p>
+            {{ formulario_de_login.usuario.label }}<br>
+            {{ formulario_de_login.usuario(size=32) }}
+            {% for error in formulario_de_login.usuario.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ formulario_de_login.password.label }}<br>
+            {{ formulario_de_login.password(size=32) }}
+            {% for error in formulario_de_login.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ formulario_de_login.remember_me() }} {{ formulario_de_login.remember_me.label }}</p>
+        <p>{{ formulario_de_login.enviar() }}</p>
+    </form>
+{% endblock %}
