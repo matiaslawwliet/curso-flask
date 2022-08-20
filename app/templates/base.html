@@ -17,15 +17,16 @@
                     <img src="{{ url_for('static',filename='img/bootstrap-logo.svg') }}" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 </a>              
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    {{ render_nav_item('index', 'Inicio', use_li=True) }}
-                    {{ render_nav_item('sobrenosotros', 'Sobre Nosotros', use_li=True) }}
-                    {{ render_nav_item('contacto', 'Contacto', use_li=True) }}
+                  {{ render_nav_item('index', 'Inicio', use_li=True) }}
                     <li class="nav-item"><a class="nav-link" href="https://bootstrap-flask.readthedocs.io/" target="_blank">Documentación</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank">Bootstrap</a></li>
+                    {% if session['usuario'] %}
+                      {{ render_nav_item('logout', 'Cerrar sesión') }}
+                    {% endif %}
                 </ul>
                 </ul>
                 <div class="text-end">
-                    <a class="btn btn-light px-3" href="https://github.com/matiaslawwliet/curso-flask" role="button" target="_blank"><i class="fa-brands fa-github"></i ></a>
+                  <a class="btn btn-light px-3" href="https://github.com/matiaslawwliet/curso-flask" role="button" target="_blank"><i class="fa-brands fa-github"></i ></a>
                 </div>
               </div>
             </div>

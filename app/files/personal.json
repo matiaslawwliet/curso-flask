@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "fecha": "10/05/2022",
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "dni": "30512365",
+        "motivo": "Ingreso por horario laboral"
+    },
+    {
+        "id": 2,
+        "fecha": "10/05/2022",
+        "nombre": "Maria",
+        "apellido": "Lauren",
+        "dni": 31652654,
+        "motivo": "Ingreso por capacitacion presencial"
+    },
+    {
+        "id": 3,
+        "fecha": "10/05/2022",
+        "nombre": "Ester",
+        "apellido": "Huck",
+        "dni": 28654382,
+        "motivo": "Ingreso como invitada"
+    },
+    {
+        "id": 4,
+        "fecha": "10/05/2022",
+        "nombre": "Luis",
+        "apellido": "Ruiz",
+        "dni": 34563942,
+        "motivo": "Ingreso como ayudante en capacitacion"
+    }
+]
