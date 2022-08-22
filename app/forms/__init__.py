@@ -10,7 +10,7 @@ class LoginForm(FlaskForm):
     enviar = SubmitField('Ingresar')
 
 class IngresarPersonalForm(FlaskForm):
-    fecha = StringField('Fecha', validators=[DataRequired('Este campo es requerido')])
+    fecha = DateField('Fecha', default=datetime.now(), validators=[DataRequired('Este campo es requerido')])
     nombre = StringField('Nombre', validators=[])
     apellido = StringField('Apellido', validators=[])
     dni = StringField('DNI', validators=[DataRequired('Este campo es requerido')])

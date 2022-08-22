@@ -1,5 +1,6 @@
 import json
 import hashlib
+from datetime import datetime
 
 
 def hashear_contrasena(contrasena):
@@ -49,6 +50,7 @@ def get_personal_por_id(id):
         lista_personal = json.load(archivo)  # carga todos los usuarios
     for empleado in lista_personal:
         if empleado['id'] == id:
+            empleado['fecha'] = datetime.strptime(empleado['fecha'],'%d/%m/%Y')
             return empleado
     return None
 

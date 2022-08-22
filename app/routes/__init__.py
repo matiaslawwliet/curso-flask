@@ -21,8 +21,11 @@ def ingresar_personal():
     if personal_form.cancelar.data:  # si se apretó el boton cancelar, personal_form.cancelar.data será True
         return redirect(url_for('index'))
     if personal_form.validate_on_submit():
-        datos_nuevos = { 'fecha': personal_form.fecha.data,'nombre': personal_form.nombre.data, 'apellido': personal_form.apellido.data, 
-                         'dni': personal_form.dni.data, 'motivo': personal_form.motivo.data }
+        datos_nuevos = { 'fecha': personal_form.fecha.data.strftime('%d/%m/%Y'),
+                         'nombre': personal_form.nombre.data,
+                         'apellido': personal_form.apellido.data, 
+                         'dni': personal_form.dni.data,
+                         'motivo': personal_form.motivo.data }
         agregar_personal(datos_nuevos)
         flash('Se ha agregado un nuevo registro', 'success')
         return redirect(url_for('index'))
@@ -36,8 +39,11 @@ def editar_personal(id_empleado):
     if personal_form.cancelar.data:  # si se apretó el boton cancelar, personal_form.cancelar.data será True
         return redirect(url_for('index'))
     if personal_form.validate_on_submit():
-        datos_nuevos = { 'fecha': personal_form.fecha.data,'nombre': personal_form.nombre.data, 'apellido': personal_form.apellido.data, 
-                         'dni': personal_form.dni.data,'motivo': personal_form.motivo.data }
+        datos_nuevos = { 'fecha': personal_form.fecha.data.strftime('%d/%m/%Y'),
+                         'nombre': personal_form.nombre.data,
+                         'apellido': personal_form.apellido.data, 
+                         'dni': personal_form.dni.data,
+                         'motivo': personal_form.motivo.data }
         eliminar_personal(id_empleado)  # Eliminamos el empleado antiguo
         agregar_personal(datos_nuevos)  # Agregamos el nuevo empleado
         flash('Se ha editado el registro exitosamente', 'success')

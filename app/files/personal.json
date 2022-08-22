@@ -1,21 +1,5 @@
 [
     {
-        "id": 1,
-        "fecha": "10/05/2022",
-        "nombre": "Juan",
-        "apellido": "Perez",
-        "dni": "30512365",
-        "motivo": "Ingreso por horario laboral"
-    },
-    {
-        "id": 2,
-        "fecha": "10/05/2022",
-        "nombre": "Maria",
-        "apellido": "Lauren",
-        "dni": 31652654,
-        "motivo": "Ingreso por capacitacion presencial"
-    },
-    {
         "id": 3,
         "fecha": "10/05/2022",
         "nombre": "Ester",
@@ -30,5 +14,21 @@
         "apellido": "Ruiz",
         "dni": 34563942,
         "motivo": "Ingreso como ayudante en capacitacion"
+    },
+    {
+        "fecha": "22/08/2022",
+        "nombre": "Matias",
+        "apellido": "Alvarez",
+        "dni": "35652499",
+        "motivo": "Ingreso por horario laboral",
+        "id": 5
+    },
+    {
+        "fecha": "20/05/2022",
+        "nombre": "Maria",
+        "apellido": "Lauren",
+        "dni": "31652654",
+        "motivo": "Ingreso por capacitacion presencial",
+        "id": 6
     }
 ]
